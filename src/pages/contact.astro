@@ -1,0 +1,187 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ContactForm from "../components/ContacForm";
+---
+
+<BaseLayout
+	title="Contact"
+	description="Get in touch with Charles Gum. Send a message about web development projects, collaborations, or just to say hello."
+>
+	<main class="contact-page">
+		<div class="container">
+			<header class="contact-header">
+				<h1>📧 Get in Touch</h1>
+				<p>
+          Have a project in mind? Want to collaborate? Or just want to say hello? 
+          I'd love to hear from you!
+        </p>
+			</header>
+			<div class="contact-grid">
+				<!-- Contact Form -->
+				 	<section class="contact-form-section">
+						<h2>Send a Message</h2>
+						<ContactForm client:load />
+				 	</section>
+				<!-- Contact Info -->
+					<section class="contact-info">
+						<h2>Other Ways to Reach Me</h2>
+
+						<div class="contact-methods">
+							<div class="contact-method">
+								<h3>📧 Email</h3>
+								<p>
+									<a href="mailto:hello@charlesgum.com">hello@charlesgum.com</a>
+								</p>
+								<small>I typically respond within 24-48 hours.</small>
+							</div>
+
+							<div class="contact-method">
+								<h3>🔗 Social & Professional</h3>
+								<ul class="social-links">
+                <li><a href="https://github.com/your-github" target="_blank" rel="noopener">GitHub</a></li>
+                <li><a href="https://linkedin.com/in/your-linkedin" target="_blank" rel="noopener">LinkedIn</a></li>
+                <li><a href="https://twitter.com/your-twitter" target="_blank" rel="noopener">Twitter</a></li>
+              </ul>
+							</div>
+
+							<div class="contact-method">
+								<h3>🌎 Location</h3>
+								<p>Honolulu, HI</p>
+								<small>Hawaii-Aleutian Standard Time (HST)</small>
+							</div>
+
+							<div class="response-info">
+								<h3>💡 What I'm Available For</h3>
+								<ul>
+									<li>Web development projects</li>
+									<li>Astro & modern JavaScript consulting</li>
+									<li>Directory site development</li>
+									<li>Search Engine optimization</li>
+									<li>Coffee chats (virtually or locally)</li>
+								</ul>
+							</div>
+						</div>
+					</section>
+			</div>
+		</div>
+	</main>
+</BaseLayout>
+
+<style>
+.contact-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.contact-header h1 {
+  color: #2563eb;
+  margin-bottom: 1rem;
+}
+
+.contact-header p {
+  font-size: 1.1rem;
+  color: #6b7280;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+.contact-form-section h2,
+.contact-info h2 {
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.contact-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-method {
+  background: #f9fafb;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border-left: 4px solid #2563eb;
+}
+
+.contact-method h3 {
+  color: #374151;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.contact-method p {
+  margin: 0.5rem 0;
+}
+
+.contact-method small {
+  color: #6b7280;
+  font-style: italic;
+}
+
+.social-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.social-links a {
+  color: #2563eb;
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;
+  background: #dbeafe;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s;
+}
+
+.social-links a:hover {
+  background: #bfdbfe;
+}
+
+.response-info {
+  margin-top: 2rem;
+  background: #fef9e7;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border-left: 4px solid #f59e0b;
+}
+
+.response-info h3 {
+  color: #92400e;
+  margin-bottom: 1rem;
+}
+
+.response-info ul {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.response-info li {
+  margin-bottom: 0.5rem;
+  color: #78350f;
+}
+</style>

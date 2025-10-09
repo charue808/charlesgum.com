@@ -7,10 +7,10 @@ export default function LiveVisitorCounter() {
 	const [sessionId] = useState(() => Math.random().toString(36).substr(2, 9));
 
 	useEffect(() => {
-		console.log('Component mounted with sessionID...', sessionId)
+		// console.log('Component mounted with sessionID...', sessionId)
 		// register the visitor
 		const registerVisitor = async () => {
-			console.log('attempting to register user...')
+			// console.log('attempting to register user...')
 			try {
         const { data, error } = await supabase
           .from('visitors')
@@ -35,7 +35,7 @@ export default function LiveVisitorCounter() {
 		// get current visitor count
 		
 		const getVisitorCount = async () => {
-			console.log('Fetching visitor count...')
+			// console.log('Fetching visitor count...')
 			try {
         const { data, error } = await supabase
           .from('visitors')
@@ -46,7 +46,7 @@ export default function LiveVisitorCounter() {
           console.error('Error fetching visitor count:', error)
           setError(error.message)
         } else {
-          console.log('Visitor count data:', data)
+          //console.log('Visitor count data:', data)
           setVisitorCount(data?.length || 0)
         }
       } catch (err) {
@@ -64,12 +64,12 @@ export default function LiveVisitorCounter() {
       .on('postgres_changes', 
           { event: '*', schema: 'public', table: 'visitors' },
           () => {
-            console.log('Realtime update received')
+            //console.log('Realtime update received')
             getVisitorCount()
           }
       )
       .subscribe((status) => {
-        console.log('Subscription status:', status)
+        //console.log('Subscription status:', status)
       })
 
 		// update every 30 secconds

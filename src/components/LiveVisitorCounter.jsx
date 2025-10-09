@@ -23,7 +23,7 @@ export default function LiveVisitorCounter() {
           console.error('Error registering visitor:', error)
           setError(error.message)
         } else {
-          console.log('Visitor registered successfully:', data)
+          //console.log('Visitor registered successfully:', data)
         }
       } catch (err) {
         console.error('Exception during registration:', err)

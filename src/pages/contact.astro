@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import ContactForm from "../components/ContacForm";
 ---
 
 <BaseLayout
@@ -12,29 +11,19 @@ import ContactForm from "../components/ContacForm";
 			<header class="contact-header">
 				<h1>📧 Get in Touch</h1>
 				<p>
-          Have a project in mind? Want to collaborate? Or just want to say hello? 
+          Have a project in mind? Want to collaborate? Or just want to say hello?
           I'd love to hear from you!
         </p>
 			</header>
+
+			<div class="under-construction">
+				<p>🚧 <strong>Contact form coming soon</strong> — currently building this out with Cloudflare Workers.</p>
+				<p>In the meantime, feel free to reach out directly at <a href="mailto:hello@charlesgum.com">hello@charlesgum.com</a></p>
+			</div>
+
 			<div class="contact-grid">
-				<!-- Contact Form -->
-				 	<section class="contact-form-section">
-						<h2>Send a Message</h2>
-						<ContactForm client:load />
-				 	</section>
-				<!-- Contact Info -->
-					<section class="contact-info">
-						<h2>Other Ways to Reach Me</h2>
-
+				<section class="contact-info">
 						<div class="contact-methods">
-							<div class="contact-method">
-								<h3>📧 Email</h3>
-								<p>
-									<a href="mailto:hello@charlesgum.com">hello@charlesgum.com</a>
-								</p>
-								<small>I typically respond within 24-48 hours.</small>
-							</div>
-
 							<div class="contact-method">
 								<h3>🔗 Social & Professional</h3>
 								<ul class="social-links">
@@ -91,21 +80,30 @@ import ContactForm from "../components/ContacForm";
   margin: 0 auto;
 }
 
+.under-construction {
+  background: #fef3c7;
+  border: 2px solid #f59e0b;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.under-construction p {
+  margin: 0.5rem 0;
+}
+
+.under-construction a {
+  color: #2563eb;
+  font-weight: 500;
+}
+
 .contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: start;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-@media (max-width: 768px) {
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-}
-
-.contact-form-section h2,
 .contact-info h2 {
   color: #1f2937;
   margin-bottom: 1.5rem;

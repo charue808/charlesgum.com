@@ -1,23 +1,37 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import LiveVisitorCounter from "../components/LiveVisitorCounter";
 import QuoteMachine from "../components/QuoteMachine";
 import WeatherDashboard from "../components/WeatherDashboard";
 ---
 
 <BaseLayout
 	title="Web Development Experiments"
-	description="Interactive experiments with Astro islands, Supabase integration, and modern web dev."
-> 
+	description="Interactive experiments with Astro islands and modern web dev."
+>
 	<main>
 		<h1>🧪 Experiments</h1>
-		 <!-- This component will show live visitor count -->
-    <LiveVisitorCounter client:load />
 
-		<!-- This component shows quotes that can be saved as a favorite and display current list of favorites -->
-		 <QuoteMachine client:idle />
+		<div class="past-experiment">
+			<p><strong>Past experiment:</strong> Live Visitor Counter — a real-time visitor tracker built with Supabase and Astro islands. Retired after the Supabase free tier project was suspended.</p>
+		</div>
 
-		<!--This component tracks temperature for the city that is searched default is pearl city, hi -->
+		<QuoteMachine client:idle />
+
 		<WeatherDashboard client:load />
 	</main>
 </BaseLayout>
+
+<style>
+.past-experiment {
+	background: #f3f4f6;
+	border-left: 4px solid #9ca3af;
+	padding: 1rem 1.25rem;
+	border-radius: 0 8px 8px 0;
+	margin-bottom: 2rem;
+	color: #4b5563;
+}
+
+.past-experiment p {
+	margin: 0;
+}
+</style>

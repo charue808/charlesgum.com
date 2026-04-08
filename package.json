@@ -9,11 +9,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/preact": "^4.1.1",
-    "@astrojs/rss": "^4.0.12",
-    "@astrojs/sitemap": "^3.6.0",
-    "@supabase/supabase-js": "^2.58.0",
-    "astro": "^5.13.11",
+    "@astrojs/preact": "^5.1.1",
+    "@astrojs/rss": "^4.0.18",
+    "@astrojs/sitemap": "^3.7.2",
+    "astro": "^6.1.4",
     "preact": "^10.27.2"
   }
 }
